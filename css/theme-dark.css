@@ -1,0 +1,1042 @@
+﻿/* =========================
+   Dark Theme
+   ========================= */
+
+body.ac-dark {
+    --ac-bg: #07111E;
+    --ac-white: #0C1828;
+    --ac-soft: #132235;
+    --ac-text: #F2F7FF;
+    --ac-muted: #AAB8CC;
+    --ac-border: rgba(198, 217, 242, 0.14);
+    --ac-primary: #B8E986;
+    --ac-secondary: #7DC8F2;
+    --ac-accent: #FFA500;
+    --ac-surface: #0D1A2A;
+    --ac-subtle: #0A1422;
+    --ac-text-soft: #92A3BA;
+    --ac-shadow: 0 18px 44px rgba(0, 0, 0, 0.36);
+    background: radial-gradient(circle at 16% 18%, rgba(125, 200, 242, 0.10) 0%, rgba(125, 200, 242, 0.03) 28%, transparent 60%), radial-gradient(circle at 84% 18%, rgba(184, 233, 134, 0.10) 0%, rgba(184, 233, 134, 0.03) 26%, transparent 56%), linear-gradient(180deg, #07111E 0%, #06101C 100%);
+    color: var(--ac-text);
+}
+
+    body.ac-dark,
+    body.ac-dark html {
+        color-scheme: dark;
+    }
+
+        body.ac-dark * {
+            color: inherit;
+        }
+
+        body.ac-dark .ac-main::before {
+            background: radial-gradient(circle at 18% 18%, rgba(125, 200, 242, 0.12) 0%, rgba(125, 200, 242, 0.04) 34%, transparent 72%), radial-gradient(circle at 82% 18%, rgba(184, 233, 134, 0.12) 0%, rgba(184, 233, 134, 0.04) 34%, transparent 72%), radial-gradient(circle at 50% 84%, rgba(255, 165, 0, 0.08) 0%, rgba(255, 165, 0, 0.03) 24%, transparent 58%);
+            filter: blur(26px);
+        }
+
+        /* =========================
+   Dark Layout
+   ========================= */
+
+        body.ac-dark .ac-sidebar,
+        body.ac-dark .ac-sidebar-header,
+        body.ac-dark .ac-sidebar-footer,
+        body.ac-dark .ac-topbar {
+            background: rgba(7, 17, 30, 0.92);
+            border-color: rgba(198, 217, 242, 0.12);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        body.ac-dark .ac-sidebar-mobile-overlay {
+            background: rgba(2, 8, 15, 0.56);
+        }
+
+        body.ac-dark .ac-title,
+        body.ac-dark .ac-subtitle,
+        body.ac-dark .ac-topbar__title,
+        body.ac-dark .ac-navitem,
+        body.ac-dark .ac-brandtext,
+        body.ac-dark .ac-card__head h2,
+        body.ac-dark strong,
+        body.ac-dark h1,
+        body.ac-dark h2,
+        body.ac-dark h3 {
+            color: var(--ac-text);
+        }
+
+        body.ac-dark p,
+        body.ac-dark .ac-subtitle,
+        body.ac-dark .ac-topbar__subtitle,
+        body.ac-dark .ac-soft-note {
+            color: var(--ac-text-soft);
+        }
+
+        /* =========================
+   Dark Buttons / Nav
+   ========================= */
+
+        body.ac-dark .ac-squarebtn,
+        body.ac-dark .ac-topbar-btn {
+            background: rgba(12, 24, 40, 0.96);
+            color: var(--ac-text);
+            border-color: rgba(198, 217, 242, 0.16);
+            box-shadow: none;
+        }
+
+            body.ac-dark .ac-squarebtn:hover,
+            body.ac-dark .ac-topbar-btn:hover {
+                background: #13253A;
+                border-color: rgba(125, 200, 242, 0.26);
+            }
+
+            body.ac-dark .ac-topbar-btn.is-active {
+                box-shadow: 0 0 0 3px rgba(125, 200, 242, 0.28);
+            }
+
+        body.ac-dark .ac-iconbox {
+            color: #D7E4F5;
+        }
+
+        body.ac-dark .ac-label {
+            color: #D7E4F5;
+        }
+
+        body.ac-dark .ac-navdivider,
+        body.ac-dark .ac-sidebar-footer__line,
+        body.ac-dark .ac-account-popover__divider,
+        body.ac-dark .ac-account-popover__divider--bottom {
+            border-top-color: rgba(198, 217, 242, 0.10);
+            background: rgba(198, 217, 242, 0.10);
+        }
+
+        body.ac-dark .ac-navitem:hover::before {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(198, 217, 242, 0.06);
+        }
+
+        body.ac-dark .ac-navitem.active::before {
+            background: rgba(184, 233, 134, 0.22);
+            border-color: rgba(184, 233, 134, 0.44);
+        }
+
+        /* =========================
+   Dark Popover / Dialog
+   ========================= */
+
+        body.ac-dark .ac-account-popover,
+        body.ac-dark .ac-dialog-card {
+            background: rgba(11, 24, 39, 0.98);
+            border-color: rgba(198, 217, 242, 0.10);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+        }
+
+        body.ac-dark .ac-account-popover__avatar {
+            background: rgba(19, 37, 58, 0.96);
+            border-color: rgba(198, 217, 242, 0.12);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+
+        body.ac-dark .ac-account-popover__identity span,
+        body.ac-dark .ac-account-popover__itemicon {
+            color: #9EB1C8;
+        }
+
+        body.ac-dark .ac-account-popover__item {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(198, 217, 242, 0.08);
+            color: var(--ac-text);
+        }
+
+            body.ac-dark .ac-account-popover__item:hover {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(198, 217, 242, 0.12);
+            }
+
+        body.ac-dark .ac-account-popover__item--subtle:hover {
+            background: rgba(184, 233, 134, 0.14);
+            border-color: rgba(184, 233, 134, 0.26);
+        }
+
+        body.ac-dark .ac-account-popover__logout,
+        body.ac-dark .ac-dialog-btn--danger {
+            background: rgba(255, 165, 0, 0.12);
+            border-color: rgba(255, 165, 0, 0.28);
+            color: #FFD08A;
+        }
+
+            body.ac-dark .ac-account-popover__logout:hover,
+            body.ac-dark .ac-dialog-btn--danger:hover {
+                background: rgba(255, 165, 0, 0.16);
+                border-color: rgba(255, 165, 0, 0.34);
+                color: #FFD08A;
+            }
+
+        body.ac-dark .ac-dialog-btn--secondary {
+            background: rgba(12, 24, 40, 0.96);
+            color: var(--ac-text);
+            border-color: rgba(198, 217, 242, 0.14);
+        }
+
+        /* =========================
+   Dark Cards / Surfaces
+   ========================= */
+
+        body.ac-dark .ac-card,
+        body.ac-dark .ac-stat-card,
+        body.ac-dark .ac-empty-state {
+            background: linear-gradient(180deg, rgba(17, 31, 49, 0.96) 0%, rgba(11, 24, 39, 0.98) 100%);
+            border-color: rgba(198, 217, 242, 0.10);
+            box-shadow: var(--ac-shadow);
+        }
+
+        body.ac-dark .ac-card--soft {
+            background: linear-gradient(115deg, rgba(184, 233, 134, 0.08) 0%, rgba(125, 200, 242, 0.07) 100%), linear-gradient(180deg, rgba(17, 31, 49, 0.96) 0%, rgba(11, 24, 39, 0.98) 100%);
+        }
+
+        /* =========================
+   Dark Inputs
+   ========================= */
+
+        body.ac-dark .ac-input,
+        body.ac-dark .ac-textarea,
+        body.ac-dark .ac-select,
+        body.ac-dark .ac-quick-input {
+            background: rgba(9, 20, 34, 0.92);
+            color: var(--ac-text);
+            border-color: rgba(198, 217, 242, 0.14);
+        }
+
+            body.ac-dark .ac-input::placeholder,
+            body.ac-dark .ac-textarea::placeholder,
+            body.ac-dark .ac-quick-input::placeholder {
+                color: #7E91A8;
+            }
+
+            body.ac-dark .ac-input:focus,
+            body.ac-dark .ac-textarea:focus,
+            body.ac-dark .ac-select:focus,
+            body.ac-dark .ac-quick-input:focus {
+                background: rgba(14, 28, 45, 0.98);
+                border-color: rgba(125, 200, 242, 0.38);
+                box-shadow: 0 0 0 4px rgba(125, 200, 242, 0.14);
+            }
+
+        body.ac-dark .ac-select {
+            background-image: linear-gradient(45deg, transparent 50%, #B8C7DA 50%), linear-gradient(135deg, #B8C7DA 50%, transparent 50%);
+        }
+
+        /* =========================
+   Dark Generic Buttons
+   ========================= */
+
+        body.ac-dark .ac-btn--primary,
+        body.ac-dark .ac-btn-primary {
+            background: var(--ac-primary);
+            color: #102012;
+            border-color: rgba(184, 233, 134, 0.40);
+            box-shadow: 0 10px 26px rgba(184, 233, 134, 0.18);
+        }
+
+        body.ac-dark .ac-btn--secondary,
+        body.ac-dark .ac-btn-secondary,
+        body.ac-dark .ac-btn-ghost,
+        body.ac-dark .ac-icon-btn,
+        body.ac-dark .ac-mini-icon-btn {
+            background: rgba(12, 24, 40, 0.96);
+            color: var(--ac-text);
+            border-color: rgba(198, 217, 242, 0.14);
+        }
+
+            body.ac-dark .ac-btn-ghost:hover,
+            body.ac-dark .ac-btn--secondary:hover,
+            body.ac-dark .ac-btn-secondary:hover,
+            body.ac-dark .ac-icon-btn:hover,
+            body.ac-dark .ac-mini-icon-btn:hover {
+                background: #13253A;
+                border-color: rgba(125, 200, 242, 0.20);
+            }
+
+        /* =========================
+   Dark Pills / Checks
+   ========================= */
+
+        body.ac-dark .ac-pill {
+            background: rgba(12, 24, 40, 0.92);
+            border-color: rgba(198, 217, 242, 0.14);
+        }
+
+        body.ac-dark .ac-pill--high {
+            color: #FFB38A;
+            background: rgba(194, 65, 12, 0.14);
+            border-color: rgba(247, 200, 158, 0.20);
+        }
+
+        body.ac-dark .ac-pill--medium {
+            color: #FFD88A;
+            background: rgba(154, 103, 0, 0.14);
+            border-color: rgba(242, 212, 143, 0.20);
+        }
+
+        body.ac-dark .ac-pill--low {
+            color: #CBEFA2;
+            background: rgba(46, 125, 79, 0.16);
+            border-color: rgba(203, 230, 169, 0.20);
+        }
+
+        body.ac-dark .ac-pill--danger {
+            color: #FFB3AE;
+            background: rgba(180, 35, 24, 0.14);
+            border-color: rgba(243, 179, 174, 0.20);
+        }
+
+        body.ac-dark .ac-pill--today {
+            color: #A9DFFF;
+            background: rgba(36, 136, 207, 0.16);
+            border-color: rgba(198, 232, 251, 0.20);
+        }
+
+        body.ac-dark .ac-pill--neutral {
+            color: #C5D2E3;
+            background: rgba(91, 100, 114, 0.16);
+            border-color: rgba(217, 224, 232, 0.16);
+        }
+
+        body.ac-dark .ac-check span {
+            background: rgba(9, 20, 34, 0.92);
+            border-color: rgba(198, 217, 242, 0.20);
+        }
+
+        body.ac-dark .ac-check input:checked + span {
+            background: var(--ac-primary);
+            border-color: rgba(184, 233, 134, 0.42);
+            box-shadow: inset 0 0 0 5px #102012;
+        }
+
+        /* =========================
+   Dark Empty State / Error
+   ========================= */
+
+        body.ac-dark .ac-empty-state {
+            border-color: rgba(198, 217, 242, 0.14);
+            background: linear-gradient(180deg, rgba(14, 28, 45, 0.98) 0%, rgba(9, 20, 34, 0.98) 100%);
+        }
+
+        body.ac-dark .ac-section-kicker,
+        body.ac-dark .ac-eyebrow {
+            color: #86CBFF;
+        }
+
+            body.ac-dark .ac-section-kicker::before,
+            body.ac-dark .ac-eyebrow::before {
+                background: linear-gradient(90deg, #86CBFF 0%, #AEDFF7 100%);
+            }
+
+        body.ac-dark #blazor-error-ui {
+            background: rgba(6, 16, 28, 0.96);
+            border-color: rgba(198, 217, 242, 0.12);
+        }
+
+            body.ac-dark #blazor-error-ui .reload {
+                background: rgba(125, 200, 242, 0.14);
+                border-color: rgba(125, 200, 242, 0.22);
+            }
+
+            body.ac-dark #blazor-error-ui .dismiss {
+                background: rgba(255, 255, 255, 0.06);
+                border-color: rgba(255, 255, 255, 0.08);
+            }
+
+        body.ac-dark .ac-topbar {
+            background: linear-gradient(180deg, rgba(7, 17, 30, 0.96) 0%, rgba(7, 17, 30, 0.90) 100%);
+            border-color: rgba(198, 217, 242, 0.12);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+        }
+
+        body.ac-dark .ac-topbar__heading,
+        body.ac-dark .ac-topbar__actions {
+            background: rgba(12, 24, 40, 0.72);
+            border-color: rgba(198, 217, 242, 0.10);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+        }
+
+        body.ac-dark .ac-topbar-btn,
+        body.ac-dark .ac-topbar-btn--menu {
+            background: rgba(14, 28, 45, 0.96);
+            color: var(--ac-text);
+            border-color: rgba(198, 217, 242, 0.14);
+        }
+
+            body.ac-dark .ac-topbar-btn:hover,
+            body.ac-dark .ac-topbar-btn--menu:hover {
+                background: #13253A;
+                border-color: rgba(125, 200, 242, 0.24);
+                box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+            }
+
+/* =========================
+   DARKMODE HOTFIX – PAGE SURFACES
+   ========================= */
+
+body.ac-dark {
+    --ac-page-surface: linear-gradient(180deg, rgba(12, 26, 44, 0.98) 0%, rgba(8, 19, 33, 0.98) 100%);
+    --ac-page-soft: linear-gradient(180deg, rgba(18, 34, 54, 0.96) 0%, rgba(11, 24, 39, 0.98) 100%);
+    --ac-page-border: rgba(198, 217, 242, 0.12);
+    --ac-page-border-strong: rgba(198, 217, 242, 0.18);
+    --ac-page-muted: #92A3BA;
+    --ac-page-pill: rgba(12, 24, 40, 0.92);
+    --ac-page-hover: #13253A;
+    --ac-page-green: rgba(184, 233, 134, 0.14);
+    --ac-page-blue: rgba(125, 200, 242, 0.14);
+}
+
+    /* shared dark cards for page-specific components */
+    body.ac-dark [class*="home-"][class*="card"],
+    body.ac-dark [class*="home-"][class*="panel"],
+    body.ac-dark [class*="home-"][class*="box"],
+    body.ac-dark [class*="home-"][class*="stat"],
+    body.ac-dark [class*="focus-"][class*="card"],
+    body.ac-dark [class*="focus-"][class*="panel"],
+    body.ac-dark [class*="focus-"][class*="box"],
+    body.ac-dark [class*="focus-"][class*="option"],
+    body.ac-dark [class*="focus-"][class*="method"],
+    body.ac-dark [class*="focus-"][class*="session"],
+    body.ac-dark [class*="stress-"][class*="card"],
+    body.ac-dark [class*="stress-"][class*="panel"],
+    body.ac-dark [class*="stress-"][class*="box"],
+    body.ac-dark [class*="stress-"][class*="item"],
+    body.ac-dark [class*="stress-"][class*="exercise"],
+    body.ac-dark [class*="habits-"][class*="card"],
+    body.ac-dark [class*="habits-"][class*="panel"],
+    body.ac-dark [class*="habits-"][class*="row"],
+    body.ac-dark [class*="habits-"][class*="week"],
+    body.ac-dark [class*="habits-"][class*="tracker"],
+    body.ac-dark [class*="habits-"][class*="mini"],
+    body.ac-dark [class*="settings-"][class*="card"],
+    body.ac-dark [class*="settings-"][class*="panel"],
+    body.ac-dark [class*="settings-"][class*="box"] {
+        background: var(--ac-page-surface) !important;
+        border-color: var(--ac-page-border) !important;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
+    }
+
+    body.ac-dark [class*="home-"][class*="soft"],
+    body.ac-dark [class*="focus-"][class*="soft"],
+    body.ac-dark [class*="stress-"][class*="soft"],
+    body.ac-dark [class*="habits-"][class*="soft"],
+    body.ac-dark [class*="settings-"][class*="soft"] {
+        background: linear-gradient(115deg, rgba(184, 233, 134, 0.08) 0%, rgba(125, 200, 242, 0.07) 100%), var(--ac-page-surface) !important;
+    }
+
+    body.ac-dark [class*="home-"] h1,
+    body.ac-dark [class*="home-"] h2,
+    body.ac-dark [class*="home-"] h3,
+    body.ac-dark [class*="focus-"] h1,
+    body.ac-dark [class*="focus-"] h2,
+    body.ac-dark [class*="focus-"] h3,
+    body.ac-dark [class*="stress-"] h1,
+    body.ac-dark [class*="stress-"] h2,
+    body.ac-dark [class*="stress-"] h3,
+    body.ac-dark [class*="habits-"] h1,
+    body.ac-dark [class*="habits-"] h2,
+    body.ac-dark [class*="habits-"] h3,
+    body.ac-dark [class*="settings-"] h1,
+    body.ac-dark [class*="settings-"] h2,
+    body.ac-dark [class*="settings-"] h3 {
+        color: var(--ac-text) !important;
+    }
+
+    body.ac-dark [class*="home-"] p,
+    body.ac-dark [class*="focus-"] p,
+    body.ac-dark [class*="stress-"] p,
+    body.ac-dark [class*="habits-"] p,
+    body.ac-dark [class*="settings-"] p,
+    body.ac-dark [class*="home-"] span,
+    body.ac-dark [class*="focus-"] span,
+    body.ac-dark [class*="stress-"] span,
+    body.ac-dark [class*="habits-"] span,
+    body.ac-dark [class*="settings-"] span {
+        color: var(--ac-page-muted);
+    }
+
+    /* start / home */
+    body.ac-dark [class*="home-"][class*="stats"],
+    body.ac-dark [class*="home-"][class*="overview"] {
+        border: 1px solid var(--ac-page-border) !important;
+        border-radius: 24px !important;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16) !important;
+    }
+
+    body.ac-dark [class*="home-"][class*="stat"],
+    body.ac-dark [class*="home-"][class*="task"],
+    body.ac-dark [class*="home-"][class*="note"],
+    body.ac-dark [class*="home-"][class*="quick"] {
+        background: var(--ac-page-soft) !important;
+        border-color: var(--ac-page-border) !important;
+    }
+
+    body.ac-dark .tasks-stats-grid {
+        align-items: stretch;
+        justify-items: stretch;
+    }
+
+    /* calendar */
+    body.ac-dark .calendar-toolbar-card,
+    body.ac-dark .calendar-board-card,
+    body.ac-dark .calendar-board-titlepill,
+    body.ac-dark .calendar-week-column,
+    body.ac-dark .calendar-year-card,
+    body.ac-dark .calendar-day-card,
+    body.ac-dark .calendar-empty-state,
+    body.ac-dark .calendar-event-popover,
+    body.ac-dark .calendar-day-popover,
+    body.ac-dark .calendar-delete-dialog,
+    body.ac-dark .calendar-day-popover__row {
+        background: var(--ac-page-surface) !important;
+        border-color: var(--ac-page-border) !important;
+        color: var(--ac-text) !important;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24) !important;
+    }
+
+    body.ac-dark .calendar-toolbar-card,
+    body.ac-dark .calendar-board-card {
+        background: linear-gradient(180deg, rgba(13, 27, 45, 0.96) 0%, rgba(10, 22, 37, 0.98) 100%) !important;
+    }
+
+    body.ac-dark .calendar-view-btn,
+    body.ac-dark .calendar-nav-btn,
+    body.ac-dark .calendar-stat-pill,
+    body.ac-dark .calendar-year-day,
+    body.ac-dark .calendar-day-count,
+    body.ac-dark .calendar-day-count--title,
+    body.ac-dark .calendar-day-popover__row span,
+    body.ac-dark .calendar-day-popover__close,
+    body.ac-dark .calendar-day-popover__delete {
+        background: var(--ac-page-pill) !important;
+        color: var(--ac-text) !important;
+        border-color: var(--ac-page-border) !important;
+    }
+
+        body.ac-dark .calendar-view-btn:hover,
+        body.ac-dark .calendar-nav-btn:hover,
+        body.ac-dark .calendar-day-popover__close:hover,
+        body.ac-dark .calendar-day-popover__delete:hover {
+            background: var(--ac-page-hover) !important;
+            border-color: rgba(125, 200, 242, 0.22) !important;
+        }
+
+        body.ac-dark .calendar-view-btn.is-active,
+        body.ac-dark .calendar-year-day.is-today,
+        body.ac-dark .calendar-day-card.is-today {
+            background: linear-gradient(180deg, rgba(184, 233, 134, 0.16) 0%, rgba(184, 233, 134, 0.10) 100%) !important;
+            border-color: rgba(184, 233, 134, 0.36) !important;
+        }
+
+        body.ac-dark .calendar-day-card.is-outside,
+        body.ac-dark .calendar-year-day.is-outside {
+            opacity: 0.58;
+        }
+
+    body.ac-dark .calendar-title-text,
+    body.ac-dark .calendar-event-popover__title,
+    body.ac-dark .calendar-day-popover__titlewrap h2,
+    body.ac-dark .calendar-delete-dialog h3,
+    body.ac-dark .calendar-day-card__head strong,
+    body.ac-dark .calendar-year-card__head h3,
+    body.ac-dark .calendar-entry-chip strong,
+    body.ac-dark .calendar-day-popover__row strong {
+        color: var(--ac-text) !important;
+    }
+
+    body.ac-dark .calendar-weekdays > div,
+    body.ac-dark .calendar-year-weekdays span,
+    body.ac-dark .calendar-weekday-head span,
+    body.ac-dark .calendar-empty-state p,
+    body.ac-dark .calendar-day-popover__row p {
+        color: var(--ac-page-muted) !important;
+    }
+
+    body.ac-dark .calendar-input,
+    body.ac-dark .calendar-input--textarea {
+        background: rgba(9, 20, 34, 0.94) !important;
+        color: var(--ac-text) !important;
+        border-color: rgba(198, 217, 242, 0.16) !important;
+    }
+
+        body.ac-dark .calendar-input::placeholder {
+            color: #7E91A8 !important;
+        }
+
+    body.ac-dark .calendar-action--cancel {
+        background: rgba(125, 200, 242, 0.12) !important;
+        border-color: rgba(125, 200, 242, 0.18) !important;
+        color: #A9DFFF !important;
+    }
+
+    body.ac-dark .calendar-action--confirm {
+        background: rgba(184, 233, 134, 0.18) !important;
+        border-color: rgba(184, 233, 134, 0.28) !important;
+        color: #D8F4B2 !important;
+    }
+
+    /* tasks */
+    body.ac-dark .tasks-panel,
+    body.ac-dark .tasks-stat-card,
+    body.ac-dark .task-row,
+    body.ac-dark .tasks-empty-state,
+    body.ac-dark .task-popover,
+    body.ac-dark .task-delete-dialog {
+        background: var(--ac-page-surface) !important;
+        border-color: var(--ac-page-border) !important;
+        color: var(--ac-text) !important;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24) !important;
+    }
+
+        body.ac-dark .tasks-stat-card.is-selected.all {
+            background: rgba(255, 255, 255, 0.06) !important;
+            border-color: rgba(198, 217, 242, 0.14) !important;
+        }
+
+        body.ac-dark .tasks-stat-card.is-selected.open,
+        body.ac-dark .tasks-stat-card.is-selected.doing {
+            background: rgba(125, 200, 242, 0.12) !important;
+        }
+
+        body.ac-dark .tasks-stat-card.is-selected.overdue {
+            background: rgba(255, 165, 0, 0.12) !important;
+        }
+
+        body.ac-dark .tasks-stat-card.is-selected.done {
+            background: rgba(184, 233, 134, 0.12) !important;
+        }
+
+        body.ac-dark .task-row.state-done {
+            background: linear-gradient(180deg, rgba(34, 52, 31, 0.94) 0%, rgba(18, 30, 25, 0.98) 100%) !important;
+            border-color: rgba(184, 233, 134, 0.16) !important;
+        }
+
+        body.ac-dark .task-row h3,
+        body.ac-dark .task-popover__head h2,
+        body.ac-dark .task-delete-dialog h3,
+        body.ac-dark .task-due,
+        body.ac-dark .task-checkboxline span {
+            color: var(--ac-text) !important;
+        }
+
+        body.ac-dark .task-row__meta,
+        body.ac-dark .tasks-empty-state p {
+            color: var(--ac-page-muted) !important;
+        }
+
+    body.ac-dark .task-check,
+    body.ac-dark .task-input,
+    body.ac-dark .task-checkboxline,
+    body.ac-dark .task-popover-close {
+        background: rgba(9, 20, 34, 0.94) !important;
+        color: var(--ac-text) !important;
+        border-color: rgba(198, 217, 242, 0.16) !important;
+    }
+
+        body.ac-dark .task-input::placeholder {
+            color: #7E91A8 !important;
+        }
+
+    body.ac-dark .task-field label {
+        color: #AAB8CC !important;
+    }
+
+    body.ac-dark .task-action--cancel {
+        background: rgba(125, 200, 242, 0.12) !important;
+        border-color: rgba(125, 200, 242, 0.18) !important;
+        color: #A9DFFF !important;
+    }
+
+    body.ac-dark .task-action--confirm,
+    body.ac-dark .task-action--full {
+        color: #13210E !important;
+    }
+
+    /* focus */
+    body.ac-dark [class*="focus-"][class*="timer"],
+    body.ac-dark [class*="focus-"][class*="ring"],
+    body.ac-dark [class*="focus-"][class*="selector"],
+    body.ac-dark [class*="focus-"][class*="preset"],
+    body.ac-dark [class*="focus-"][class*="progress"],
+    body.ac-dark [class*="focus-"][class*="method"] {
+        background: var(--ac-page-surface) !important;
+        border-color: var(--ac-page-border) !important;
+        color: var(--ac-text) !important;
+    }
+
+    body.ac-dark [class*="focus-"] select,
+    body.ac-dark [class*="focus-"] input,
+    body.ac-dark [class*="focus-"] textarea,
+    body.ac-dark [class*="focus-"][class*="select"] {
+        background: rgba(9, 20, 34, 0.94) !important;
+        color: var(--ac-text) !important;
+        border-color: rgba(198, 217, 242, 0.16) !important;
+    }
+
+    body.ac-dark [class*="focus-"] select,
+    body.ac-dark [class*="focus-"][class*="select"] {
+        background-image: linear-gradient(45deg, transparent 50%, #B8C7DA 50%), linear-gradient(135deg, #B8C7DA 50%, transparent 50%) !important;
+        background-position: calc(100% - 24px) calc(50% - 3px), calc(100% - 17px) calc(50% - 3px) !important;
+        background-size: 7px 7px, 7px 7px !important;
+        background-repeat: no-repeat !important;
+    }
+
+    body.ac-dark [class*="focus-"] button:not(.ac-topbar-btn):not(.ac-squarebtn) {
+        border-color: rgba(198, 217, 242, 0.16) !important;
+    }
+
+    body.ac-dark [class*="focus-"][class*="method"] {
+        background: rgba(12, 24, 40, 0.94) !important;
+    }
+
+    /* stress */
+    body.ac-dark [class*="stress-"][class*="level"],
+    body.ac-dark [class*="stress-"][class*="help"],
+    body.ac-dark [class*="stress-"][class*="exercise"],
+    body.ac-dark [class*="stress-"][class*="ace"],
+    body.ac-dark [class*="stress-"][class*="important"] {
+        background: var(--ac-page-surface) !important;
+        border-color: var(--ac-page-border) !important;
+    }
+
+    body.ac-dark [class*="stress-"] button:not(.ac-topbar-btn):not(.ac-squarebtn) {
+        background: rgba(12, 24, 40, 0.94) !important;
+        color: var(--ac-text) !important;
+        border-color: rgba(198, 217, 242, 0.16) !important;
+    }
+
+    body.ac-dark [class*="stress-"] button[class*="active"],
+    body.ac-dark [class*="stress-"] button[aria-pressed="true"] {
+        background: rgba(184, 233, 134, 0.16) !important;
+        border-color: rgba(184, 233, 134, 0.32) !important;
+    }
+
+    /* motivation */
+    body.ac-dark .motivation-quote-card,
+    body.ac-dark .motivation-list-count,
+    body.ac-dark .motivation-popover,
+    body.ac-dark .motivation-confirm-popover,
+    body.ac-dark .motivation-confirm-preview {
+        background: var(--ac-page-surface) !important;
+        border-color: var(--ac-page-border) !important;
+        color: var(--ac-text) !important;
+    }
+
+        body.ac-dark .motivation-quote-card.is-pinned {
+            background: linear-gradient(180deg, rgba(184, 233, 134, 0.10) 0%, rgba(12, 26, 44, 0.98) 100%) !important;
+            border-color: rgba(184, 233, 134, 0.28) !important;
+        }
+
+    body.ac-dark .motivation-quote-author,
+    body.ac-dark .motivation-pinned-author {
+        color: var(--ac-page-muted) !important;
+    }
+
+    body.ac-dark .motivation-source-pill {
+        background: rgba(125, 200, 242, 0.12) !important;
+        border-color: rgba(125, 200, 242, 0.16) !important;
+        color: #A9DFFF !important;
+    }
+
+    body.ac-dark .motivation-pinned-label {
+        background: rgba(184, 233, 134, 0.12) !important;
+        border-color: rgba(184, 233, 134, 0.18) !important;
+        color: #D8F4B2 !important;
+    }
+
+    body.ac-dark .motivation-edit-btn,
+    body.ac-dark .motivation-delete-btn,
+    body.ac-dark .motivation-pin-btn {
+        border-color: rgba(198, 217, 242, 0.14) !important;
+        background: rgba(12, 24, 40, 0.94) !important;
+        color: var(--ac-text) !important;
+    }
+
+    body.ac-dark .motivation-delete-btn {
+        color: #FFD08A !important;
+        border-color: rgba(255, 165, 0, 0.24) !important;
+        background: rgba(255, 165, 0, 0.10) !important;
+    }
+
+    body.ac-dark .motivation-form-message {
+        background: rgba(255, 165, 0, 0.10) !important;
+        border-color: rgba(255, 165, 0, 0.20) !important;
+        color: #FFD08A !important;
+    }
+
+    /* habits */
+    body.ac-dark [class*="habits-"][class*="overview"],
+    body.ac-dark [class*="habits-"][class*="stats"],
+    body.ac-dark [class*="habits-"][class*="tracker"] {
+        border: 1px solid var(--ac-page-border) !important;
+        border-radius: 24px !important;
+    }
+
+    body.ac-dark [class*="habits-"][class*="day"],
+    body.ac-dark [class*="habits-"][class*="date"],
+    body.ac-dark [class*="habits-"][class*="dot"],
+    body.ac-dark [class*="habits-"][class*="pill"],
+    body.ac-dark [class*="habits-"][class*="week"] {
+        border-color: var(--ac-page-border) !important;
+    }
+
+    body.ac-dark [class*="habits-"] input,
+    body.ac-dark [class*="habits-"] select,
+    body.ac-dark [class*="habits-"] textarea,
+    body.ac-dark [class*="habits-"] [class*="input"],
+    body.ac-dark [class*="habits-"] [class*="select"] {
+        background: rgba(9, 20, 34, 0.94) !important;
+        color: var(--ac-text) !important;
+        border-color: rgba(198, 217, 242, 0.16) !important;
+    }
+
+    /* settings */
+    body.ac-dark [class*="settings-"] input,
+    body.ac-dark [class*="settings-"] select,
+    body.ac-dark [class*="settings-"] textarea,
+    body.ac-dark [class*="settings-"] [class*="input"],
+    body.ac-dark [class*="settings-"] [class*="select"],
+    body.ac-dark [class*="settings-"] [class*="textarea"] {
+        background: rgba(9, 20, 34, 0.94) !important;
+        color: var(--ac-text) !important;
+        border-color: rgba(198, 217, 242, 0.16) !important;
+        box-shadow: none !important;
+    }
+
+        body.ac-dark [class*="settings-"] input::placeholder,
+        body.ac-dark [class*="settings-"] textarea::placeholder {
+            color: #7E91A8 !important;
+        }
+
+    body.ac-dark [class*="settings-"] button:not(.ac-topbar-btn):not(.ac-squarebtn) {
+        border-color: rgba(198, 217, 242, 0.16) !important;
+    }
+
+    body.ac-dark [class*="settings-"][class*="display"],
+    body.ac-dark [class*="settings-"][class*="theme"],
+    body.ac-dark [class*="settings-"][class*="gedenk"] {
+        border: 1px solid var(--ac-page-border) !important;
+        border-radius: 24px !important;
+    }
+
+    /* toasts */
+    body.ac-dark .ac-toast {
+        background: rgba(11, 24, 39, 0.96) !important;
+        border-color: rgba(198, 217, 242, 0.12) !important;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.30) !important;
+    }
+
+    body.ac-dark .ac-toast__body strong {
+        color: var(--ac-text) !important;
+    }
+
+    body.ac-dark .ac-toast__body p {
+        color: var(--ac-page-muted) !important;
+    }
+
+    body.ac-dark .ac-toast__close {
+        color: #B8C7DA !important;
+    }
+
+        body.ac-dark .ac-toast__close:hover {
+            background: rgba(255, 255, 255, 0.06) !important;
+        }
+
+    body.ac-dark .ac-toast--success .ac-toast__icon {
+        background: rgba(184, 233, 134, 0.14) !important;
+        border-color: rgba(184, 233, 134, 0.20) !important;
+        color: #D8F4B2 !important;
+    }
+
+    body.ac-dark .ac-toast--info .ac-toast__icon {
+        background: rgba(125, 200, 242, 0.14) !important;
+        border-color: rgba(125, 200, 242, 0.20) !important;
+        color: #A9DFFF !important;
+    }
+
+    body.ac-dark .ac-toast--error .ac-toast__icon {
+        background: rgba(255, 165, 0, 0.12) !important;
+        border-color: rgba(255, 165, 0, 0.22) !important;
+        color: #FFD08A !important;
+    }
+
+    /* =========================
+   DARKMODE FINAL HOTFIX
+   ========================= */
+
+    /* ---------- FOKUS ---------- */
+    /* weiße Felder / leere Boxen abdunkeln */
+    body.ac-dark [class*="focus-"][class*="current"],
+    body.ac-dark [class*="focus-"][class*="empty"],
+    body.ac-dark [class*="focus-"][class*="session-empty"],
+    body.ac-dark [class*="focus-"][class*="history-empty"],
+    body.ac-dark [class*="focus-"][class*="selected-task"],
+    body.ac-dark [class*="focus-"][class*="current-task"],
+    body.ac-dark [class*="focus-"][class*="today-sessions"],
+    body.ac-dark [class*="focus-"][class*="session-card"] {
+        background: linear-gradient(180deg, rgba(13, 27, 45, 0.96) 0%, rgba(9, 20, 34, 0.98) 100%) !important;
+        border-color: rgba(198, 217, 242, 0.12) !important;
+        color: var(--ac-text) !important;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.20) !important;
+    }
+
+        body.ac-dark [class*="focus-"][class*="empty"] h3,
+        body.ac-dark [class*="focus-"][class*="empty"] strong,
+        body.ac-dark [class*="focus-"][class*="current"] h3,
+        body.ac-dark [class*="focus-"][class*="current"] strong {
+            color: var(--ac-text) !important;
+        }
+
+        body.ac-dark [class*="focus-"][class*="empty"] p,
+        body.ac-dark [class*="focus-"][class*="current"] p,
+        body.ac-dark [class*="focus-"][class*="session-empty"] p {
+            color: #92A3BA !important;
+        }
+
+    /* ---------- STRESSBEWÄLTIGUNG ---------- */
+    /* etwas heller / angenehmer */
+    body.ac-dark [class*="stress-"][class*="card"],
+    body.ac-dark [class*="stress-"][class*="panel"],
+    body.ac-dark [class*="stress-"][class*="exercise"],
+    body.ac-dark [class*="stress-"][class*="item"],
+    body.ac-dark [class*="stress-"][class*="help"] {
+        background: linear-gradient(180deg, rgba(15, 30, 49, 0.96) 0%, rgba(10, 23, 38, 0.98) 100%) !important;
+        border-color: rgba(198, 217, 242, 0.12) !important;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18) !important;
+    }
+
+    /* stress buttons wieder farbig */
+    body.ac-dark [class*="stress-"] button:not(.ac-topbar-btn):not(.ac-squarebtn):not(.ac-dialog-btn):not(.ac-account-popover__item) {
+        background: rgba(174, 223, 247, 0.18) !important;
+        border-color: rgba(125, 200, 242, 0.22) !important;
+        color: #111827 !important;
+    }
+
+    body.ac-dark [class*="stress-"] button[class*="start"],
+    body.ac-dark [class*="stress-"] button[class*="primary"],
+    body.ac-dark [class*="stress-"] button[class*="confirm"],
+    body.ac-dark [class*="stress-"] button[class*="cta"] {
+        background: rgba(184, 233, 134, 0.22) !important;
+        border-color: rgba(184, 233, 134, 0.28) !important;
+        color: #111827 !important;
+    }
+
+    /* pills / badges wieder farbiger */
+    body.ac-dark [class*="stress-"][class*="pill"],
+    body.ac-dark [class*="stress-"] [class*="pill"],
+    body.ac-dark [class*="stress-"][class*="badge"],
+    body.ac-dark [class*="stress-"] [class*="badge"],
+    body.ac-dark [class*="stress-"][class*="tag"],
+    body.ac-dark [class*="stress-"] [class*="tag"] {
+        background: rgba(174, 223, 247, 0.14) !important;
+        border-color: rgba(125, 200, 242, 0.22) !important;
+        color: #A9DFFF !important;
+    }
+
+    body.ac-dark [class*="stress-"] button:hover:not(.ac-topbar-btn):not(.ac-squarebtn) {
+        filter: brightness(1.04);
+    }
+
+    /* ---------- MOTIVATION ---------- */
+    /* die 3 mini buttons bei jedem zitat fixen */
+    body.ac-dark .motivation-pin-btn {
+        background: rgba(184, 233, 134, 0.22) !important;
+        border-color: rgba(184, 233, 134, 0.28) !important;
+        color: #111827 !important;
+    }
+
+        body.ac-dark .motivation-pin-btn.is-active {
+            background: rgba(184, 233, 134, 0.28) !important;
+            border-color: rgba(184, 233, 134, 0.36) !important;
+            color: #111827 !important;
+        }
+
+    body.ac-dark .motivation-edit-btn {
+        background: rgba(174, 223, 247, 0.20) !important;
+        border-color: rgba(125, 200, 242, 0.24) !important;
+        color: #111827 !important;
+    }
+
+    body.ac-dark .motivation-delete-btn {
+        background: rgba(255, 165, 0, 0.16) !important;
+        border-color: rgba(255, 165, 0, 0.26) !important;
+        color: #111827 !important;
+    }
+
+    body.ac-dark .motivation-add-btn,
+    body.ac-dark .motivation-add-btn--inline {
+        background: rgba(184, 233, 134, 0.24) !important;
+        border-color: rgba(184, 233, 134, 0.30) !important;
+        color: #111827 !important;
+    }
+
+    /* ---------- EINSTELLUNGEN ---------- */
+    /* alle settings-buttons nicht mehr dunkel */
+    body.ac-dark [class*="settings-"] .ac-btn--primary,
+    body.ac-dark [class*="settings-"] .ac-btn-primary,
+    body.ac-dark [class*="settings-"] button[class*="save"],
+    body.ac-dark [class*="settings-"] button[class*="apply"],
+    body.ac-dark [class*="settings-"] button[class*="speichern"],
+    body.ac-dark [class*="settings-"] button[class*="anwenden"] {
+        background: rgba(184, 233, 134, 0.24) !important;
+        border-color: rgba(184, 233, 134, 0.30) !important;
+        color: #111827 !important;
+    }
+
+    body.ac-dark [class*="settings-"] .ac-btn--secondary,
+    body.ac-dark [class*="settings-"] .ac-btn-secondary,
+    body.ac-dark [class*="settings-"] .ac-btn-ghost,
+    body.ac-dark [class*="settings-"] button[class*="show"],
+    body.ac-dark [class*="settings-"] button[class*="reset"],
+    body.ac-dark [class*="settings-"] button[class*="erneut"] {
+        background: rgba(174, 223, 247, 0.18) !important;
+        border-color: rgba(125, 200, 242, 0.22) !important;
+        color: #111827 !important;
+    }
+
+    /* theme / gedenken karten etwas klarer */
+    body.ac-dark [class*="settings-"][class*="display"],
+    body.ac-dark [class*="settings-"][class*="theme"],
+    body.ac-dark [class*="settings-"][class*="gedenk"] {
+        background: linear-gradient(180deg, rgba(13, 27, 45, 0.96) 0%, rgba(9, 20, 34, 0.98) 100%) !important;
+        border-color: rgba(198, 217, 242, 0.12) !important;
+    }
+
+    /* ---------- GENERIC: colored buttons keep their color ---------- */
+    body.ac-dark .task-action--confirm,
+    body.ac-dark .task-action--cancel,
+    body.ac-dark .task-action--delete,
+    body.ac-dark .calendar-action--confirm,
+    body.ac-dark .calendar-action--cancel,
+    body.ac-dark .calendar-delete-action,
+    body.ac-dark .motivation-save-btn,
+    body.ac-dark .motivation-confirm-delete,
+    body.ac-dark .tasks-icon-btn--solid,
+    body.ac-dark .tasks-icon-btn--edit,
+    body.ac-dark .tasks-icon-btn--delete,
+    body.ac-dark .calendar-create-btn,
+    body.ac-dark .ac-btn--primary,
+    body.ac-dark .ac-btn-primary {
+        color: #111827 !important;
+    }
+
+        body.ac-dark .task-action--confirm i,
+        body.ac-dark .task-action--cancel i,
+        body.ac-dark .task-action--delete i,
+        body.ac-dark .calendar-action--confirm i,
+        body.ac-dark .calendar-action--cancel i,
+        body.ac-dark .calendar-delete-action i,
+        body.ac-dark .motivation-save-btn i,
+        body.ac-dark .motivation-confirm-delete i,
+        body.ac-dark .tasks-icon-btn--solid i,
+        body.ac-dark .tasks-icon-btn--edit i,
+        body.ac-dark .tasks-icon-btn--delete i,
+        body.ac-dark .calendar-create-btn i,
+        body.ac-dark .ac-btn--primary i,
+        body.ac-dark .ac-btn-primary i {
+            color: #111827 !important;
+        }

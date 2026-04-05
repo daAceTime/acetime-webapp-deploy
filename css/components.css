@@ -1,0 +1,704 @@
+﻿/* =========================
+   Shared Typography / Headings
+   ========================= */
+
+.ac-section-kicker,
+.ac-eyebrow,
+.auth-kicker,
+.calendar-kicker,
+.focus-kicker,
+.habits-kicker,
+.settings-kicker,
+.stress-kicker,
+.tasks-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: #4EA9DB;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+    .ac-section-kicker::before,
+    .ac-eyebrow::before,
+    .auth-kicker::before,
+    .calendar-kicker::before,
+    .focus-kicker::before,
+    .habits-kicker::before,
+    .settings-kicker::before,
+    .stress-kicker::before,
+    .tasks-kicker::before {
+        content: "";
+        width: 24px;
+        height: 3px;
+        border-radius: 999px;
+        background: #4EA9DB;
+        flex-shrink: 0;
+    }
+
+/* =========================
+   Cards
+   ========================= */
+
+.ac-card,
+.ac-stat-card {
+    background: var(--ac-surface);
+    border: 1px solid var(--ac-border);
+    border-radius: 24px;
+    box-shadow: var(--ac-shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.ac-card {
+    padding: 20px;
+}
+
+    .ac-card:hover,
+    .ac-stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(17, 24, 39, 0.10);
+    }
+
+.ac-card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+    .ac-card__head h2 {
+        margin: 0;
+        font-size: 1.9rem;
+        line-height: 1.12;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+    }
+
+.ac-card--soft {
+    background: linear-gradient(115deg, rgba(184, 233, 134, 0.18) 0%, rgba(174, 223, 247, 0.15) 100%), var(--ac-surface);
+}
+
+.ac-card--full {
+    grid-column: 1 / -1;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+.ac-btn,
+.ac-icon-btn,
+.ac-mini-icon-btn {
+    border-radius: 16px;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+}
+
+.ac-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 18px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+    .ac-btn:hover,
+    .ac-icon-btn:hover,
+    .ac-mini-icon-btn:hover {
+        transform: translateY(-1px);
+    }
+
+.ac-btn--small,
+.ac-btn-small {
+    min-height: 46px;
+    padding: 0 16px;
+    font-size: 0.96rem;
+}
+
+.ac-btn--primary,
+.ac-btn-primary {
+    background: var(--ac-primary);
+    color: var(--ac-text);
+    border-color: rgba(17, 24, 39, 0.04);
+    box-shadow: 0 8px 24px rgba(184, 233, 134, 0.22);
+}
+
+.ac-btn--secondary,
+.ac-btn-secondary {
+    background: var(--ac-surface);
+    color: var(--ac-text);
+    border-color: var(--ac-border);
+}
+
+.ac-btn-ghost {
+    background: var(--ac-surface);
+    color: var(--ac-text);
+    border-color: var(--ac-border);
+}
+
+    .ac-btn-ghost:hover,
+    .ac-btn--secondary:hover,
+    .ac-btn-secondary:hover {
+        background: var(--ac-soft);
+    }
+
+/* =========================
+   Inputs
+   ========================= */
+
+.ac-input,
+.ac-textarea,
+.ac-select,
+.ac-quick-input {
+    width: 100%;
+    border: 1px solid var(--ac-border);
+    border-radius: 18px;
+    background: var(--ac-surface);
+    color: var(--ac-text);
+    font: inherit;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    box-sizing: border-box;
+}
+
+.ac-input,
+.ac-select {
+    min-height: 58px;
+    padding: 0 18px;
+}
+
+.ac-quick-input {
+    min-height: 56px;
+    padding: 0 16px;
+}
+
+.ac-textarea {
+    min-height: 112px;
+    padding: 16px 18px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.ac-textarea--large {
+    min-height: 150px;
+}
+
+.ac-input:focus,
+.ac-textarea:focus,
+.ac-select:focus,
+.ac-quick-input:focus {
+    outline: none;
+    border-color: rgba(71, 166, 232, 0.45);
+    box-shadow: 0 0 0 4px rgba(174, 223, 247, 0.22);
+    background: var(--ac-surface);
+}
+
+.ac-input::placeholder,
+.ac-textarea::placeholder,
+.ac-quick-input::placeholder {
+    color: var(--ac-text-soft);
+    opacity: 0.85;
+}
+
+.ac-select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #64748B 50%), linear-gradient(135deg, #64748B 50%, transparent 50%);
+    background-position: calc(100% - 24px) calc(50% - 3px), calc(100% - 17px) calc(50% - 3px);
+    background-size: 7px 7px, 7px 7px;
+    background-repeat: no-repeat;
+    padding-right: 46px;
+}
+
+/* =========================
+   Pills
+   ========================= */
+
+.ac-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid var(--ac-border);
+    font-size: 0.9rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.ac-pill--high {
+    color: #C2410C;
+    background: #FFF1E7;
+    border-color: #F7C89E;
+}
+
+.ac-pill--medium {
+    color: #9A6700;
+    background: #FFF8E6;
+    border-color: #F2D48F;
+}
+
+.ac-pill--low {
+    color: #2E7D4F;
+    background: #F2FAE9;
+    border-color: #CBE6A9;
+}
+
+.ac-pill--danger {
+    color: #B42318;
+    background: #FEF3F2;
+    border-color: #F3B3AE;
+}
+
+.ac-pill--today {
+    color: #2488CF;
+    background: #EEF9FF;
+    border-color: #C6E8FB;
+}
+
+.ac-pill--neutral {
+    color: #5B6472;
+    background: #F8FAFC;
+    border-color: #D9E0E8;
+}
+
+/* =========================
+   Checkbox
+   ========================= */
+
+.ac-check {
+    position: relative;
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.ac-check--small {
+    width: 22px;
+    height: 22px;
+}
+
+.ac-check input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.ac-check span {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1.6px solid #C9D2DE;
+    background: var(--ac-surface);
+    transition: all 0.16s ease;
+    box-sizing: border-box;
+}
+
+.ac-check input:checked + span {
+    background: var(--ac-primary);
+    border-color: #9FD16B;
+    box-shadow: inset 0 0 0 5px var(--ac-surface);
+}
+
+/* =========================
+   Empty State
+   ========================= */
+
+.ac-empty-state {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    min-height: 320px;
+    padding: 28px;
+    border: 1px dashed #D9DEE5;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #FCFDFC 0%, #F8FAF9 100%);
+    text-align: center;
+}
+
+.ac-empty-state__icon {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.ac-empty-state h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+}
+
+.ac-empty-state p {
+    margin: 0;
+    max-width: 520px;
+    color: var(--ac-text-soft);
+    line-height: 1.7;
+}
+
+.ac-form-stack {
+    display: grid;
+    gap: 14px;
+}
+
+/* =========================
+   Forms / Utility
+   ========================= */
+
+.ac-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    align-items: end;
+}
+
+.ac-form-grid--tasks {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.ac-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .ac-field label {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #64748B;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+.ac-field__ghost-label {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ac-field--full {
+    grid-column: 1 / -1;
+}
+
+.ac-error {
+    margin: 14px 0 0;
+    color: #C2410C;
+    font-weight: 700;
+}
+
+.ac-soft-note {
+    margin: 8px 0 0;
+    color: var(--ac-text-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* =========================
+   Icon Buttons
+   ========================= */
+
+.ac-icon-btn,
+.ac-mini-icon-btn {
+    border: 1px solid var(--ac-border);
+    background: var(--ac-surface);
+    color: #64748B;
+    font: inherit;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.ac-icon-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.35rem;
+}
+
+.ac-mini-icon-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+}
+
+    .ac-icon-btn:hover,
+    .ac-mini-icon-btn:hover {
+        border-color: #F2D48F;
+        background: #FFF8E6;
+    }
+
+/* =========================
+   Task Rows / Status Stripe
+   ========================= */
+
+.ac-task-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px 16px 22px;
+    border-radius: 18px;
+    background: var(--ac-surface);
+    border: 1px solid var(--ac-border);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    overflow: hidden;
+}
+
+    .ac-task-row:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+    }
+
+    .ac-task-row::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        bottom: 10px;
+        width: 6px;
+        border-radius: 999px;
+        background: #D9E0E8;
+    }
+
+.ac-task--open::before {
+    background: #47A6E8;
+}
+
+.ac-task--progress::before {
+    background: #7CC3F3;
+}
+
+.ac-task--done::before {
+    background: #7AC943;
+}
+
+.ac-task--overdue::before {
+    background: #FFA500;
+}
+
+/* =========================
+   Generic Interaction
+   ========================= */
+
+button {
+    transition: all 0.2s ease;
+}
+
+    button:hover {
+        transform: translateY(-1px);
+    }
+
+/* =========================
+   Toasts
+   ========================= */
+
+.ac-toast-stack {
+    position: fixed;
+    top: 118px;
+    right: 24px;
+    z-index: 920;
+    width: min(380px, calc(100vw - 28px));
+    display: grid;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.ac-toast {
+    pointer-events: auto;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 34px;
+    align-items: start;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 22px;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 18px 42px rgba(17, 24, 39, 0.12);
+    animation: ac-toast-in 0.18s ease;
+}
+
+.ac-toast__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 1.15rem;
+    border: 1px solid transparent;
+}
+
+.ac-toast__body {
+    min-width: 0;
+}
+
+    .ac-toast__body strong {
+        display: block;
+        margin: 0;
+        color: var(--ac-text);
+        font-size: 0.98rem;
+        font-weight: 900;
+        line-height: 1.2;
+    }
+
+    .ac-toast__body p {
+        margin: 4px 0 0;
+        color: var(--ac-text-soft);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+.ac-toast__close {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: #64748B;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+    .ac-toast__close:hover {
+        background: rgba(17, 24, 39, 0.06);
+    }
+
+.ac-toast--success {
+    border-color: rgba(122, 201, 67, 0.24);
+}
+
+    .ac-toast--success .ac-toast__icon {
+        background: rgba(184, 233, 134, 0.2);
+        border-color: rgba(122, 201, 67, 0.22);
+        color: #4E8A27;
+    }
+
+.ac-toast--error {
+    border-color: rgba(255, 165, 0, 0.26);
+}
+
+    .ac-toast--error .ac-toast__icon {
+        background: rgba(255, 165, 0, 0.14);
+        border-color: rgba(255, 165, 0, 0.22);
+        color: #9A5F00;
+    }
+
+.ac-toast--info {
+    border-color: rgba(78, 169, 219, 0.22);
+}
+
+    .ac-toast--info .ac-toast__icon {
+        background: rgba(174, 223, 247, 0.22);
+        border-color: rgba(78, 169, 219, 0.18);
+        color: #2D7CAB;
+    }
+
+@keyframes ac-toast-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 780px) {
+    .ac-toast-stack {
+        top: 104px;
+        right: 14px;
+        left: 14px;
+        width: auto;
+    }
+
+    .ac-toast {
+        grid-template-columns: 40px minmax(0, 1fr) 32px;
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    .ac-toast__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+}
+
+/* =========================
+   GLOBAL MOBILE FORM FIX
+   ========================= */
+
+@media (max-width: 760px) {
+    .ac-input,
+    .ac-select,
+    .ac-quick-input {
+        min-height: 48px;
+        padding: 0 14px;
+        border-radius: 14px;
+        font-size: 0.94rem;
+    }
+
+    .ac-textarea {
+        min-height: 110px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        font-size: 0.94rem;
+    }
+
+    .ac-form-stack {
+        gap: 12px;
+    }
+
+    .ac-form-grid,
+    .ac-form-grid--tasks {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .ac-field {
+        gap: 8px;
+    }
+
+        .ac-field label {
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+        }
+}
+
+@media (max-width: 640px) {
+    .ac-input,
+    .ac-select,
+    .ac-quick-input {
+        min-height: 44px;
+        padding: 0 12px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+    }
+
+    .ac-textarea {
+        min-height: 96px;
+        padding: 11px 12px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+    }
+
+    .ac-field label {
+        font-size: 0.78rem;
+    }
+}

@@ -1,0 +1,301 @@
+﻿/* =========================
+   Design Tokens
+   ========================= */
+
+:root {
+    --ac-green: #B8E986;
+    --ac-blue: #AEDFF7;
+    --ac-orange: #FFA500;
+    --ac-bg: #F9F9F9;
+    --ac-white: #FFFFFF;
+    --ac-soft: #F3F4F6;
+    --ac-text: #111827;
+    --ac-muted: #374151;
+    --ac-border: #E5E7EB;
+    --ac-primary: #B8E986;
+    --ac-secondary: #AEDFF7;
+    --ac-accent: #FFA500;
+    --ac-surface: #FFFFFF;
+    --ac-subtle: #F3F4F6;
+    --ac-text-soft: #5B6472;
+    --ac-text-subtle: #111827;
+    --ac-shadow: 0 12px 35px rgba(17, 24, 39, 0.05);
+    --r-md: 12px;
+    --r-lg: 16px;
+    --r-pill: 999px;
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 12px;
+    --s-4: 16px;
+    --s-5: 24px;
+    --s-6: 32px;
+    --s-7: 40px;
+    --sidebar-open: 280px;
+    --sidebar-closed: 92px;
+    --rail: 76px;
+    --square: 48px;
+    --sidebar-dur: 0.34s;
+    --sidebar-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --burger-open-right: 20px;
+}
+
+/* =========================
+   Reset
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--ac-bg);
+    color: var(--ac-text);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+}
+
+body {
+    min-height: 100dvh;
+    position: relative;
+    background: var(--ac-bg);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* =========================
+   Focus
+   ========================= */
+
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 3px solid rgba(174, 223, 247, 0.9);
+    outline-offset: 4px;
+    border-radius: 12px;
+}
+
+h1:focus,
+h1:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================
+   Loader
+   ========================= */
+
+.ac-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 12px;
+    flex-direction: column;
+    background: var(--ac-bg);
+}
+
+.loading-progress {
+    width: 72px;
+    height: 72px;
+}
+
+.loading-progress-bg {
+    fill: none;
+    stroke: var(--ac-border);
+    stroke-width: 8;
+}
+
+.loading-progress-fg {
+    fill: none;
+    stroke: var(--ac-blue);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 276;
+    stroke-dashoffset: 180;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    animation: ac-spin 1.2s linear infinite;
+}
+
+@keyframes ac-spin {
+    0% {
+        stroke-dashoffset: 276;
+    }
+
+    50% {
+        stroke-dashoffset: 90;
+    }
+
+    100% {
+        stroke-dashoffset: 276;
+    }
+}
+
+.loading-progress-text {
+    font-size: 14px;
+    color: var(--ac-muted);
+}
+
+/* =========================
+   Error UI
+   ========================= */
+
+#blazor-error-ui {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 9999;
+    max-width: 420px;
+    padding: 12px 14px;
+    background: rgba(17, 24, 39, 0.92);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    display: none;
+    align-items: center;
+    gap: 12px;
+}
+
+    #blazor-error-ui .reload {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 12px;
+        background: rgba(174, 223, 247, 0.20);
+        border: 1px solid rgba(174, 223, 247, 0.35);
+    }
+
+        #blazor-error-ui .reload:hover {
+            background: rgba(174, 223, 247, 0.30);
+        }
+
+    #blazor-error-ui .dismiss {
+        margin-left: auto;
+        cursor: pointer;
+        user-select: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+        #blazor-error-ui .dismiss:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+.ac-error-ui__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ac-error-ui__title {
+    font-weight: 800;
+}
+
+.ac-error-ui__text {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* =========================
+   Responsive Base
+   ========================= */
+
+@media (max-width: 1250px) {
+    .ac-form-grid,
+    .ac-form-grid--tasks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ac-field--action {
+        grid-column: 1 / -1;
+        max-width: 90px;
+    }
+}
+
+@media (max-width: 860px) {
+    .ac-card {
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .ac-card__head,
+    .ac-task-row__top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ac-form-grid,
+    .ac-form-grid--tasks {
+        grid-template-columns: 1fr;
+    }
+
+    .ac-field--action {
+        max-width: none;
+    }
+
+    .ac-add-btn,
+    .ac-mini-icon-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 720px) {
+    .ac-card,
+    .ac-stat-card {
+        padding: 20px;
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .ac-home {
+        gap: 16px;
+    }
+}
+
+/* =========================
+   Global Motion
+   ========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ac-pagecontent {
+    animation: fadeIn 0.35s ease;
+}
