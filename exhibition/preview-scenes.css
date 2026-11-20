@@ -1,0 +1,133 @@
+/* AceTime motion laboratory: live curated scenes only in ?present=1&scene=...
+   Deliberately namespaced. The real interactive app does not inherit these styles. */
+body.sx-mode{overflow:hidden}
+.sx-overlay{--sx-navy:#0c2c40;--sx-ink:#154354;--sx-mint:#b8e986;--sx-sky:#92d9e9;position:fixed;inset:0;z-index:340;isolation:isolate;display:flex;flex-direction:column;width:100%;height:100dvh;background:#f7faf7;font-family:"DM Sans",Inter,system-ui,sans-serif;color:var(--sx-ink);overflow:hidden}
+.sx-overlay,.sx-overlay *{box-sizing:border-box}
+.sx-overlay .sx-header{height:60px;flex:0 0 60px;padding:9px 17px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #dcebe1;background:#ffffffd8}
+.sx-header img{height:32px;width:32px;object-fit:contain}
+.sx-header strong{font-family:"Space Grotesk",system-ui,sans-serif;font-size:18px;letter-spacing:-.075em;color:#154556}
+.sx-header strong span{color:#8ec272}
+.sx-header small{margin-left:auto;color:#8eaaa6;font-size:9px;font-weight:900;letter-spacing:.15em}
+.sx-main{position:relative;min-height:0;flex:1 1 auto;padding:19px 20px 20px;overflow:hidden;display:flex;flex-direction:column;align-items:stretch}
+.sx-kicker{color:#4b9f8a;font-size:10px;letter-spacing:.13em;font-weight:900;line-height:1.3;margin:0 0 14px;flex:none}
+.sx-main h1{font:800 36px/1.04 "Space Grotesk",system-ui,sans-serif;letter-spacing:-.085em;margin:0 0 13px;color:#123d4f;flex:none}
+.sx-main h1 em{font-style:normal;color:#5eaf94}
+.sx-main>p{font-size:13px;line-height:1.55;color:#587e87;margin:0 0 13px;flex:none}
+.sx-note{margin-top:16px!important;text-align:center;color:#5a857f!important;font-size:12px!important;font-weight:700}
+.sx-eyebrow{font-size:10px!important;font-weight:900!important;letter-spacing:.12em!important;color:#65a78f!important;margin:16px 0 10px!important}
+.sx-nav{height:65px;flex:0 0 65px;display:flex;align-items:center;justify-content:space-around;background:#fff;border-top:1px solid #d7e7e1;z-index:20;padding:7px 9px 6px}
+.sx-nav span{display:grid;gap:3px;place-items:center;color:#7b959c;font-size:9px;font-weight:800;min-width:53px}
+.sx-nav b{display:grid;place-items:center;font-size:17px;line-height:1;font-weight:600;height:29px;width:33px;border-radius:10px}
+.sx-nav .selected{color:#194d55}.sx-nav .selected b{background:#c1ecac;color:#14525b}
+.sx-home .sx-main{padding-top:22px}
+.sx-home-hero{position:relative;min-height:285px;flex:0 0 auto;padding:23px 19px;background:radial-gradient(circle at 76% 47%,#386984,#173850 57%,#0b2238);border-radius:21px;overflow:hidden;color:white;box-shadow:0 19px 36px #1e4e5b23}
+.sx-home-hero:before{content:"";position:absolute;top:11%;left:55%;width:185px;height:185px;border:1px solid #ffffff24;border-radius:50%;animation:sxSpin 24s linear infinite}
+.sx-home-hero h1{color:#f3fff4;font-size:35px;position:relative;z-index:2}
+.sx-home-hero h1 em{color:#b8e986}
+.sx-home-hero p{font-size:11px;line-height:1.5;color:#daeae5;max-width:170px;position:relative;z-index:2}
+.sx-home-ace{position:absolute;right:-2%;bottom:1%;width:178px;height:175px;object-fit:contain;animation:sxBob 4.4s ease-in-out infinite}
+.sx-shortcuts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 6px}
+.sx-shortcuts>div{border:1px solid #d1e4df;background:#ebf8ed;border-radius:13px;padding:10px 5px;text-align:center;color:#2c786b;font-size:19px;display:grid;gap:6px}
+.sx-shortcuts b{font-size:10px;color:#2d5263}
+.sx-next{position:relative;padding:14px 17px;border:1px solid #c8ded8;background:#fff;border-radius:13px;display:grid;gap:6px}
+.sx-next b{font-size:13px}.sx-next small{font-size:10px;color:#60878a}.sx-next i{position:absolute;right:13px;top:14px;color:#4fb18f}
+.sx-quote{margin-top:13px;background:#c4efde;border-radius:13px;padding:13px 16px;font-size:11px;color:#2e7667;font-weight:800}
+.sx-stats{min-height:116px;display:flex;align-items:center;gap:11px;border-radius:16px;background:linear-gradient(115deg,#c3ebc0,#cbf5ec);padding:17px;overflow:hidden;position:relative}
+.sx-stats>b{font:800 69px "Space Grotesk",sans-serif;color:#17514f;letter-spacing:-.09em}
+.sx-stats>span{font-size:12px;font-weight:800;line-height:1.4}
+.sx-stats img{position:absolute;right:-11px;bottom:-17px;width:122px;height:130px;object-fit:contain;animation:sxBob 4s infinite}
+.sx-task-progress{border-radius:99px;height:11px;background:#d5e6e2;overflow:hidden;margin:0 0 18px}
+.sx-task-progress i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#8edbbe,#a9de7c);width:20%;animation:sxProgress 9s ease-in-out infinite}
+.sx-task{margin:7px 0;display:flex;align-items:center;gap:12px;padding:14px 13px;border:1px solid #deebe6;border-radius:14px;background:#fff;min-height:69px;color:#235165;box-shadow:0 7px 17px #124d4710}
+.sx-task>b{font-size:19px;display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#ecf1f1;color:#7c999a}
+.sx-task span{display:grid;gap:5px;flex:1}.sx-task strong{font-size:12px}.sx-task small{font-size:10px;color:#6b8d8c}.sx-task.done>b{background:#a6df90;color:#164b46}
+.sx-task.active{animation:sxTaskGlow 9s ease-in-out infinite}
+.sx-task.active>b{animation:sxTaskCheck 9s ease-in-out infinite}.sx-task.active>span{animation:sxTextCheck 9s ease-in-out infinite}.sx-task.active{border-color:#aad9c5}
+.sx-stress .sx-main{text-align:center;align-items:center}
+.sx-stress .sx-main h1{font-size:42px;margin-top:6px}
+.sx-stress-ace{object-fit:contain;height:188px;width:230px;animation:sxBob 4.7s ease-in-out infinite}
+.sx-moods{display:flex;gap:7px;margin:18px 0;justify-content:center}
+.sx-moods>span{display:grid;place-items:center;background:#fff;border:1px solid #d5e5df;border-radius:14px;width:51px;height:59px;font-size:24px;filter:grayscale(.2)}
+.sx-moods>.pick{background:#c8efb8;border-color:#91d8a6;transform:translateY(-4px);box-shadow:0 11px 27px #84cba05b;animation:sxMood 5s ease-in-out infinite}
+.sx-quiet-card{width:100%;border:1px solid #d1e8dc;background:#eff9eb;border-radius:18px;padding:16px;display:grid;gap:5px;text-align:left}
+.sx-quiet-card strong{font-size:15px}.sx-quiet-card small{font-size:11px;line-height:1.5;color:#65907e}
+.sx-soft-button{background:#bfe8b1;color:#225d56;border-radius:13px;width:100%;padding:15px;text-align:center;font-size:12px;font-weight:900;margin-top:15px}
+.sx-breath{background:radial-gradient(circle at 51% 46%,#367d7f,#0f344d 70%,#071b2e);color:#effff6}
+.sx-breath .sx-header{background:#0b2a40e0;border-color:#356d70}.sx-breath .sx-header strong{color:#e2fff4}
+.sx-breath .sx-header small{color:#a7c7cc}
+.sx-breath .sx-main{align-items:center;text-align:center;padding:18px 18px 15px}
+.sx-breath .sx-kicker{color:#b4e8c4;margin:7px 0 11px}
+.sx-breath .sx-main h1{color:white;font-size:37px;margin-bottom:8px}
+.sx-breath .sx-main h1 em{color:#c0f4ac}
+.sx-breath .sx-main>p{color:#cce7df;font-size:12px}
+.sx-breath-space{position:relative;flex:0 0 auto;width:290px;height:290px;margin:14px auto 9px;display:grid;place-items:center}
+.sx-breath-halo{position:absolute;width:95%;height:95%;border-radius:50%;background:radial-gradient(circle,#a8f3bc6e,#81bdf333 53%,transparent 72%);filter:blur(16px);animation:sxBreathe 8s ease-in-out infinite}
+.sx-breath-ring{position:absolute;border:1px solid #b3f3bd99;border-radius:50%;width:52%;height:52%;box-shadow:0 0 14px #9df7ba5a,inset 0 0 15px #a4f8d424;animation:sxBreathe 8s ease-in-out infinite}
+.sx-breath-ring.two{width:70%;height:70%;animation-delay:-.35s;border-color:#a0eaff73}
+.sx-breath-ring.three{width:90%;height:90%;animation-delay:-.7s;border-color:#a2efcc59}
+.sx-breath-core{z-index:4;width:164px;height:164px;border-radius:50%;background:radial-gradient(circle at 48% 32%,#e5fff4,#a5e9c0 61%,#85c8b0);display:grid;place-items:center;box-shadow:0 0 49px #a3e5c871;animation:sxBreatheCore 8s ease-in-out infinite}
+.sx-breath-core img{width:140px;height:140px;object-fit:contain;filter:drop-shadow(0 7px 13px #4c927d4c)}
+.sx-breath-caption{display:grid;gap:7px;place-items:center;font-size:12px;color:#bbded4}
+.sx-breath-caption>b{font-weight:700;letter-spacing:.07em}
+.sx-breath-caption>div{height:31px;position:relative;width:220px;font:800 25px "Space Grotesk",sans-serif}
+.sx-breath-caption span{position:absolute;left:0;right:0;opacity:0}
+.sx-breath-caption span:first-child{animation:sxInhale 8s ease-in-out infinite}
+.sx-breath-caption span:last-child{animation:sxExhale 8s ease-in-out infinite}
+.sx-breath .sx-note{color:#b7d8ce!important;font-size:10px!important;margin-top:10px!important}
+.sx-breath .sx-nav{background:#0a293d;border-color:#346177}
+.sx-breath .sx-nav span{color:#86acb4}.sx-breath .sx-nav .selected{color:#e6fff8}.sx-breath .sx-nav .selected b{color:#0b3540}
+.sx-school-banner{background:linear-gradient(125deg,#112e46,#1e6675);min-height:118px;padding:19px 17px;border-radius:17px;position:relative;overflow:hidden;color:#e9fff6}
+.sx-school-banner div{display:grid;gap:6px;max-width:200px}.sx-school-banner small{font-size:10px;color:#a7e1ce}.sx-school-banner strong{font-size:20px}.sx-school-banner span{font-size:11px;color:#c5e9e6}
+.sx-school-banner img{position:absolute;right:1px;bottom:-15px;height:130px;width:130px;object-fit:contain;animation:sxBob 4s infinite}
+.sx-subjects{display:grid;gap:12px;margin-top:20px}.sx-subjects>div{position:relative;padding:15px 15px 23px;border:1px solid #d5e7e1;background:#fff;border-radius:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.sx-subjects b{font-size:12px}.sx-subjects small{font-size:9px;color:#5d8d89}.sx-subjects i{position:absolute;bottom:10px;left:15px;right:15px;height:6px;background:#e2eeec;border-radius:99px;overflow:hidden}
+.sx-subjects i:before{content:"";display:block;height:100%;width:var(--bar);border-radius:99px;background:#94dbbc;transform:scaleX(0);transform-origin:left;animation:sxBarIn 3.5s cubic-bezier(.2,.8,.2,1) forwards}
+.sx-subjects>div:nth-child(2) i:before{animation-delay:.5s}.sx-subjects>div:nth-child(3) i:before{animation-delay:1s}
+.sx-focus{background:linear-gradient(145deg,#0d263f,#123d54);color:#eafff1}
+.sx-focus .sx-main{text-align:center;align-items:center;padding-top:27px}
+.sx-focus .sx-main h1{font-size:43px;color:white}.sx-focus .sx-main h1 em{color:#b8e986}
+.sx-focus .sx-main>p{color:#bcd9e1}
+.sx-focus .sx-header{background:#0d2a40;border-color:#3c5365}.sx-focus .sx-header strong{color:white}.sx-focus .sx-nav{background:#0e2d41;border-color:#3c5365}
+.sx-focus .sx-nav span{color:#8facb8}.sx-focus .sx-nav .selected{color:#d7f7ed}
+.sx-focus-clock{position:relative;width:268px;height:268px;margin:10px 0 20px;flex:0 0 268px;display:grid;place-items:center}
+.sx-focus-circle{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#c0ed9e 0 38%,#2d6072 38% 100%);animation:sxTimerSpin 23s linear infinite;box-shadow:0 0 48px #7ccaa638}
+.sx-focus-circle:after{content:"";position:absolute;inset:13px;border-radius:50%;background:#12364c}
+.sx-focus-inside{position:relative;z-index:2;display:grid;gap:8px;place-items:center}
+.sx-focus-inside small{font-size:10px;font-weight:900;letter-spacing:.15em;color:#9ed3ca}
+.sx-focus-inside strong{font:800 62px "Space Grotesk",sans-serif;letter-spacing:-.07em;color:white}
+.sx-focus-inside span{color:#c1e7d5;font-size:12px}
+.sx-focus-label{position:relative;z-index:2;width:100%;border:1px solid #467686;background:#1b4b5c;padding:16px;border-radius:16px;display:grid;gap:5px;text-align:left}
+.sx-focus-label b{font-size:13px}.sx-focus-label small{font-size:10px;color:#b0cbd5}
+.sx-focus-ace{position:absolute;bottom:5%;right:4%;width:92px;height:110px;object-fit:contain;animation:sxBob 3s infinite}
+.sx-week-title{margin:12px 0 13px;font-size:10px;letter-spacing:.12em;font-weight:900;color:#699c8f;display:flex;justify-content:space-between}
+.sx-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin:9px 0 18px}
+.sx-week span{display:grid;place-items:center;gap:10px;padding:10px 2px;border-radius:11px;border:1px solid #d8e5df;background:#fff;color:#597e85;font-size:10px}
+.sx-week b{font-size:18px;color:#285a64}.sx-week .today{background:#bce9a5;border-color:#95d9a2;animation:sxToday 4s ease-in-out infinite}
+.sx-habit{padding:17px 15px;margin:8px 0;border:1px solid #d4e9de;background:#fff;border-radius:16px;display:grid;gap:7px}
+.sx-habit strong{font-size:13px}.sx-habit small{font-size:11px;color:#6d8d8c}.sx-habit i{font-style:normal;color:#57aa91;font-size:16px;letter-spacing:.1em}
+.sx-win{background:radial-gradient(circle at 47% 33%,#d5f8c5,#f4fff3 56%,#e1f7e8)}
+.sx-win .sx-main{align-items:center;text-align:center}
+.sx-win-spark{position:absolute;top:8%;left:0;right:0;font-size:29px;letter-spacing:36px;color:#91d397;white-space:nowrap;animation:sxCelebrate 3s ease-in-out infinite}
+.sx-win-ace{width:310px;height:288px;object-fit:contain;filter:drop-shadow(0 19px 25px #68b59c5f);animation:sxVictory 3.5s ease-in-out infinite;margin:45px auto 15px}
+.sx-win h1{font-size:42px!important}.sx-win-pill{padding:16px 20px;background:#a6e58e;color:#225c57;font-weight:900;font-size:14px;border-radius:99px;animation:sxTaskGlow 4s infinite}
+.sx-calendar-task{padding:18px 13px;margin:9px 0;border:1px solid #d9e9e2;border-radius:15px;background:#fff;display:grid;grid-template-columns:55px 1fr;column-gap:8px}
+.sx-calendar-task i{font-style:normal;color:#69a993;font-weight:900;font-size:10px;grid-row:span 2}
+.sx-calendar-task strong{font-size:12px}.sx-calendar-task small{font-size:10px;color:#688b8d}
+.sx-calendar-ace{position:absolute;bottom:25px;right:5px;width:90px;height:100px;object-fit:contain;animation:sxBob 5s infinite}
+@keyframes sxBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes sxSpin{to{transform:rotate(360deg)}}
+@keyframes sxProgress{0%,12%{width:22%}47%,95%{width:77%}100%{width:22%}}
+@keyframes sxTaskGlow{0%,35%,100%{box-shadow:0 4px 12px #146f4a0b}51%,72%{box-shadow:0 0 0 3px #afe8a3,0 15px 28px #7ed5a357}}
+@keyframes sxTaskCheck{0%,38%,100%{background:#ecf1f1;color:#7c999a;transform:scale(1)}50%,80%{background:#9ee496;color:#1c544e;transform:scale(1.11)}}
+@keyframes sxTextCheck{0%,36%,100%{opacity:1}60%,79%{opacity:.7}}
+@keyframes sxMood{50%{transform:translateY(-8px) scale(1.06)}}
+@keyframes sxBreathe{0%,100%{transform:scale(.75);opacity:.45}45%,55%{transform:scale(1.23);opacity:1}}
+@keyframes sxBreatheCore{0%,100%{transform:scale(.92)}50%{transform:scale(1.075)}}
+@keyframes sxInhale{0%,43%{opacity:1;transform:translateY(0)}49%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes sxExhale{0%,49%{opacity:0;transform:translateY(-6px)}55%,94%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+@keyframes sxBarIn{to{transform:scaleX(1)}}
+@keyframes sxTimerSpin{to{transform:rotate(360deg)}}
+@keyframes sxToday{50%{box-shadow:0 0 0 4px #b0e99b5c}}
+@keyframes sxCelebrate{50%{transform:translateY(18px) rotate(3deg)}}
+@keyframes sxVictory{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-15px) rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.sx-overlay *, .sx-overlay *:before,.sx-overlay *:after{animation:none!important;transition:none!important}}
