@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/acetime-exhibition-publish.yml"
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
