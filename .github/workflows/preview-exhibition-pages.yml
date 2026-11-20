@@ -1,0 +1,28 @@
+name: AceTime Exhibition Preview Hosting
+on:
+  push:
+    branches:
+      - preview/acetime-exhibition-v3
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: acetime-exhibition-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    environment:
+      name: github-pages
+      url: https://daacetime.github.io/acetime-webapp-deploy/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: exhibition
+      - uses: actions/deploy-pages@v4
