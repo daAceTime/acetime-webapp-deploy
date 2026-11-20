@@ -1,0 +1,32 @@
+/* AceTime Exhibition Scenes: opt-in animated previews, future-app-ready.
+   Activated only by ?present=1&scene=...; never changes the ordinary public app. */
+(function(){
+"use strict";
+const p=new URLSearchParams(location.search);
+if(p.get("present")!=="1"||!p.get("scene"))return;
+const name=p.get("scene");
+if(!["home","tasks","stress","breath","school","focus","habits","win","calendar"].includes(name))return;
+const assets=typeof ASSETS!=="undefined"?ASSETS:{};
+const img=(key,cls="")=>`<img class="${cls}" alt="Ace" src="${assets[key]||""}">`;
+const header=`<div class="sx-header"><img src="${assets.applogo||""}" alt=""><strong>acetime<span>.</span></strong><small>DEMO</small></div>`;
+const nav=(tab)=>`<div class="sx-nav">${[["heute","⌂","Heute"],["aufgaben","✓","Aufgaben"],["stress","♡","Stress"],["schule","▤","Schule"],["profil","♙","Profil"]].map(([t,ico,l])=>`<span class="${t===tab?"selected":""}"><b>${ico}</b>${l}</span>`).join("")}</div>`;
+const tag=(s)=>`<div class="sx-kicker">✳ &nbsp;${s}</div>`;
+const templates={
+home:()=>`${tag("ACE IST MIT DIR")}<section class="sx-home-hero"><h1>DEIN TAG.<br><em>DEIN TEMPO.</em></h1><p>Du musst nicht alles auf einmal schaffen.</p>${img("motiviert2","sx-home-ace")}</section><div class="sx-shortcuts"><div>♡ <b>Ruhe</b></div><div>◈ <b>Mein Tag</b></div><div>✳ <b>Fokus</b></div></div><p class="sx-eyebrow">DEIN NÄCHSTER SCHRITT</p><div class="sx-next"><b>Mathe: 3 Beispiele üben</b><small>Ein Beispiel genügt zum Anfangen.</small><i>↗</i></div><div class="sx-quote">„Nicht alles muss heute geschafft werden.“</div>`,
+tasks:()=>`${tag("AUFGABEN")}<h1>EINS NACH<br><em>DEM ANDEREN.</em></h1><div class="sx-stats"><b>3</b><span>kleine Schritte<br>für deinen Tag</span>${img("motiviert2")}</div><p class="sx-eyebrow">DEIN FORTSCHRITT</p><div class="sx-task-progress"><i></i></div><div class="sx-task done"><b>✓</b><span><strong>Englisch wiederholen</strong><small>Geschafft. Stark!</small></span>✦</div><div class="sx-task active"><b>✓</b><span><strong>Mathe: 3 Beispiele</strong><small>Ein kleiner Schritt zählt.</small></span>✳</div><div class="sx-task"><b>○</b><span><strong>Präsentation üben</strong><small>Ganz ohne Stress.</small></span></div><p class="sx-note">Keine Punkte. Kein Druck. Dein Tempo.</p>`,
+stress:()=>`${tag("CHECK IN MIT ACE")}<h1>WIE GEHT'S<br><em>DIR HEUTE?</em></h1>${img("ruhig2","sx-stress-ace")}<p>Du musst nichts erklären. Wähl aus, wie du dich fühlst.</p><div class="sx-moods"><span>😊</span><span>🙂</span><span class="pick">😐</span><span>😟</span><span>😣</span></div><div class="sx-quiet-card"><strong>Ist gerade viel los?</strong><small>Ace hört zu. Und Ruhe ist immer erlaubt.</small></div><div class="sx-soft-button">♡ Ein bisschen Ruhe finden</div>`,
+breath:()=>`${tag("DEIN RUHEMOMENT")}<h1>GANZ<br><em>IN RUHE.</em></h1><p>Ein Moment nur für dich.</p><div class="sx-breath-space"><div class="sx-breath-halo"></div><div class="sx-breath-ring one"></div><div class="sx-breath-ring two"></div><div class="sx-breath-ring three"></div><div class="sx-breath-core">${img("ruhig2")}</div></div><div class="sx-breath-caption"><b>In deinem Tempo</b><div><span>Einatmen</span><span>Ausatmen</span></div></div><p class="sx-note">Du musst nichts schaffen. Atme ganz entspannt.</p>`,
+school:()=>`${tag("DEIN LERNKOMPASS")}<h1>DEIN WEG.<br><em>DEINE ZIELE.</em></h1><div class="sx-school-banner"><div><small>DEIN WEG ZÄHLT</small><strong>Du lernst dazu.</strong><span>Jeden Tag ein bisschen.</span></div>${img("motiviert2")}</div><div class="sx-subjects"><div><b>Mathematik</b><small>Gut unterwegs</small><i style="--bar:67%"></i></div><div><b>Digital Business</b><small>Stark!</small><i style="--bar:90%"></i></div><div><b>Deutsch</b><small>Du machst weiter</small><i style="--bar:73%"></i></div></div><p class="sx-note">✳ Ziele wachsen mit dir.</p>`,
+focus:()=>`${tag("DEIN FOKUSRAUM")}<h1>JUST<br><em>ONE THING.</em></h1><p>Eine Sache. Ein guter Anfang.</p><div class="sx-focus-clock"><div class="sx-focus-circle"></div><div class="sx-focus-inside"><small>FOKUSMOMENT</small><strong>25:00</strong><span>Dein Rhythmus</span></div></div><div class="sx-focus-label"><b>✳ Mathe: 3 Beispiele üben</b><small>Pausieren ist jederzeit okay.</small></div>${img("motiviert2","sx-focus-ace")}`,
+habits:()=>`${tag("ENAS IDEEN")}<h1>ALLES<br><em>AN EINEM ORT.</em></h1><p>Termine, Notizen und kleine Gewohnheiten.</p><div class="sx-week-title">DEINE WOCHE <b>NOVEMBER</b></div><div class="sx-week">${["Mo","Di","Mi","Do","Fr","Sa","So"].map((d,i)=>`<span class="${i===4?"today":""}">${d}<b>${16+i}</b></span>`).join("")}</div><div class="sx-habit"><strong>✧ Etwas Bewegung</strong><small>4 von 7 Tagen</small><i>● ● ● ● ○ ○ ○</i></div><div class="sx-habit"><strong>♡ Ein Gedanke für heute</strong><small>„Auch heute darf leicht sein.“</small></div><div class="sx-soft-button">Alles freiwillig. Alles für dich.</div>`,
+win:()=>`${tag("DEIN KLEINER ERFOLG")}<div class="sx-win-spark">✦ ✳ ✧ ✦</div>${img("motiviert1","sx-win-ace")}<h1>HEY,<br><em>GUT GEMACHT!</em></h1><p>Ein Schritt ist ein Schritt. Feier ihn.</p><div class="sx-win-pill">✓ &nbsp; Eine Aufgabe erledigt</div><p class="sx-note">Ace freut sich mit dir. ♡</p>`,
+calendar:()=>`${tag("DEINE WOCHE")}<h1>DU HAST<br><em>DEN ÜBERBLICK.</em></h1><p>Termine und Aufgaben. Alles zusammen.</p><div class="sx-week">${["Mo","Di","Mi","Do","Fr","Sa","So"].map((d,i)=>`<span class="${i===4?"today":""}">${d}<b>${16+i}</b></span>`).join("")}</div><div class="sx-calendar-task"><i>09:00</i><strong>Mathe wiederholen</strong><small>Ganz entspannt</small></div><div class="sx-calendar-task"><i>14:00</i><strong>Projekt besprechen</strong><small>Gemeinsam geht mehr</small></div><div class="sx-calendar-task"><i>♡</i><strong>Zeit für dich</strong><small>Das gehört dazu</small></div>${img("motiviert2","sx-calendar-ace")}`
+};
+const tab={home:"heute",tasks:"aufgaben",stress:"stress",breath:"stress",school:"schule",focus:"heute",habits:"heute",win:"heute",calendar:"heute"}[name];
+const overlay=document.createElement("div");
+overlay.className="sx-overlay sx-"+name;
+overlay.setAttribute("aria-label","AceTime animierte Vorschau "+name);
+overlay.innerHTML=header+`<main class="sx-main">${templates[name]()}</main>`+nav(tab);
+document.body.classList.add("sx-mode");
+document.body.append(overlay);
+})();
